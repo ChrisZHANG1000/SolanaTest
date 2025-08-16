@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  susdc-test:
+    build: .
+    ports:
+      - "8899:8899"     # JSON RPC
+      - "8900:8900"     # WS
+    volumes:
+      # 可把测试代码挂卷，实时改实时跑
+      - ./tests:/app/tests
